@@ -13,5 +13,8 @@ function receiveNumberOfPeopleValue(){
 }
 
 function receiveTipPercentageValue(value) {
+    tipPercentage = value / 100
 
+    buttonSelected = document.querySelector(`#buttton-${value}`)
+    buttonSelected.classList.add("button-selected")
 }
