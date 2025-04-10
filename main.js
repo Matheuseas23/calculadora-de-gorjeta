@@ -19,6 +19,13 @@ function receiveTipPercentageValue(value) {
     buttonSelected.classList.add("button-selected")
 }
 
+function receiveCustomTipPercentageValue() {
+    tipPercentage = document.querySelector("#custom-tip").valueAsNumber / 100
+    removeClassButtonSelected()
+    buttonSelected = document.querySelector("#custom-tip")
+    buttonSelected.classList.add("button-selected")
+}
+
 function removeClassButtonSelected() {
     if (buttonSelected !== null) {
         buttonSelected.classList.remove("button-selected")
