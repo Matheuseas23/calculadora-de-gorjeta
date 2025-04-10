@@ -9,16 +9,18 @@ function receiveBillValue() {
 }
 
 function receiveNumberOfPeopleValue(){
-    calculateResults()
+    
     numberOfPeople = document.querySelector("#people").valueAsNumber
+    calculateResults()
 }
 
 function receiveTipPercentageValue(value) {
-    calculateResults()  
+      
     tipPercentage = value / 100
     removeClassButtonSelected()
     buttonSelected = document.querySelector(`#button-${value}`)
     buttonSelected.classList.add("button-selected")
+    calculateResults()
 }
 
 function receiveCustomTipPercentageValue() {
@@ -57,3 +59,20 @@ function calculateTotalPerson(tipamountPerson){
     TotalStrong.textContent = `$${totalPerson.toFixed(2)}`
     return
 }
+
+
+function reset() {
+    bill = 0
+    document.querySelector(`#bill`).value = ""
+
+    tipPercentage = 0 
+    removeClassButtonSelected()
+    document.querySelector("#custom-tip").value =  ""
+
+    numberOfPeople = 0
+    document.querySelector(`#people`).value = ""
+
+    document.querySelector(".amount strong").textContent = "$0.00"
+    document.querySelector(".Total strong").textContent = "$0.00"
+}
+    
